@@ -1,0 +1,165 @@
+.tarjetaIndividual{
+    display: grid;
+    grid-template-columns: 100% 100%;
+    column-gap: 10%;
+}
+.tarjetaImagenes{
+    background-color: white;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.imagenGrande{
+    grid-column: 1/3;
+}
+.imagenPequenaF{
+    grid-column: 1/2;
+}
+.imagenPequenaB{
+    grid-column: 2/3;
+}
+.tarjetaInfo{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.infoNombre{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.bordeBajo{
+    border-bottom: #F0E3E0 solid 2px;
+}
+.cabecera{
+    width: 100%;
+    text-align: center;
+    background-color: rgb(86, 108, 214);
+    height: 55px;
+}
+.logo{
+    height: 48px;
+}
+
+.barraBusqueda{
+    border: none;
+    padding-left: 1em;
+    outline: none;
+    height: 25px;
+}
+
+.contenedorBarraBusqueda{
+    border-radius: 20px;
+    border: solid black 1px;
+    height: 30px;
+    padding-left: 9px;
+    width:40%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-content: center;
+}
+
+.contenedorIcono{
+    background-color: rgb(86, 108, 214);
+    border-radius: 20px;
+    width: 50px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    height: 30px;
+}
+.pokemon-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    background: linear-gradient(rgb(242, 244, 255), rgb(251, 252, 255)) no-repeat;
+    color: rgb(64, 65, 94);
+  }
+  .pokemon-block{
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    display: grid;
+  }
+  .name {
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .sprite{
+      width: 200px;
+  }
+  .grass{
+      border-radius: 10px;
+      background-color:#7AC74C;
+      width: 30%;
+      display: inline-block;
+      margin: 10px;
+      color: white;
+      text-transform: capitalize;
+  }
+  .poison{
+    border-radius: 10px;
+    background-color:#A33EA1;
+    width: 30%;
+    display: inline-block;
+    margin: 10px;
+    margin: 10px;
+    color: white;
+    text-transform: capitalize;
+}
+.fire{
+    border-radius: 10px;
+    background-color:#EE8130;
+    width: 30%;
+    display: inline-block;
+    margin: 10px;
+    margin: 10px;
+    color: white;
+    text-transform: capitalize;
+}
+.flying{
+    border-radius: 10px;
+    background-color:#A98FF3;
+    width: 30%;
+    display: inline-block;
+    margin: 10px;
+    margin: 10px;
+    color: white;
+    text-transform: capitalize;
+}
+
+.water{
+    border-radius: 10px;
+    background-color:#6390F0;
+    width: 30%;
+    display: inline-block;
+    margin: 10px;
+    margin: 10px;
+    color: white;
+    text-transform: capitalize;
+}
+
+.bug{
+    border-radius: 10px;
+    background-color:#A6B91A;
+    width: 30%;
+    display: inline-block;
+    margin: 10px;
+    margin: 10px;
+    color: white;
+    text-transform: capitalize;
+}
+
+.normal{
+    border-radius: 10px;
+    background-color:#A98FF3;
+    width: 30%;
+    display: inline-block;
+    margin: 10px;
+    margin: 10px;
+    color: white;
+    text-transform: capitalize;
+}
