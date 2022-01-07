@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import { GifGridItem } from './GifGridItem';
 
-export const GifGrid = ({pokemons,pokemon,isSearch}) => {
+export const GifGrid = ({pokemons,pokemon,isSearch,setIsSearch,setPokemons,loadData,setPokemon}) => {
 
     
     return (
@@ -12,12 +12,20 @@ export const GifGrid = ({pokemons,pokemon,isSearch}) => {
                         key={pokemon.nombre}
                         pokemon={pokemon}
                         isSearch={isSearch}
+                        setIsSearch={setIsSearch}
+                        setPokemons={setPokemons}
+                        loadData={loadData}
+                        setPokemon={setPokemon}
                     />
                     :
                     pokemons.map((poke)=>(
                         <GifGridItem 
                             key={poke.nombre}
                             pokemon={poke}
+                            setIsSearch={setIsSearch}
+                            setPokemons={setPokemons}
+                            loadData={loadData}
+                            setPokemon={setPokemon}
                         />     
                     ))
                 }

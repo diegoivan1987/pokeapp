@@ -82,12 +82,20 @@ export const PokeApp = () => {
                         key={url}
                         pokemon={pokemon}
                         isSearch={isSearch}
-                        
+                        setIsSearch={setIsSearch}
+                        setPokemons={setPokemons}
+                        loadData={loadData}
+                        setPokemon={setPokemon}
                     />
                 :
                     <GifGrid 
                         key={url}
                         pokemons={pokemons}
+                        isSearch={isSearch}
+                        setIsSearch={setIsSearch}
+                        setPokemons={setPokemons}
+                        loadData={loadData}
+                        setPokemon={setPokemon}
                     />
             }
             

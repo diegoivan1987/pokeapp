@@ -1,6 +1,53 @@
 import React from 'react'
 
-export const GifGridItem = ({pokemon,isSearch}) => {
+export const GifGridItem = ({pokemon,isSearch,setIsSearch,setPokemons,loadData,setPokemon}) => {
+    let pokeclickeado = ''
+    
+    const obtieneNombre = () => 
+    {
+        
+        pokeclickeado = pokemon.nombre;
+        onSearch();
+    }
+
+    const onSearch = async() => {
+        if(pokeclickeado==='')
+        {
+            setIsSearch(false);
+            setPokemons([]);
+            loadData();
+        }
+        else
+        {
+            const url = `https://pokeapi.co/api/v2/pokemon/${pokeclickeado}/`;
+            const resp = await fetch(url);
+            const data  = await resp.json();
+            let tipo1 = '';
+            let tipo2 = '';
+            if(data.types.length===2){
+                    tipo1 = data.types[0].type.name;
+                    tipo2 = data.types[1].type.name;
+                }
+                else{
+                    tipo1 = data.types[0].type.name;
+                }
+                const nuevo = {
+                    id: data.id,
+                    nombre:data.name,
+                    tipo1: tipo1,
+                    tipo2:tipo2,
+                    imagenSrc: data.sprites.other['official-artwork'].front_default,
+                    altura: data.height,
+                    peso:data.weight,
+                    frente:data.sprites.front_default,
+                    espalda:data.sprites.back_default,
+                    frenteShiny:data.sprites.front_shiny,
+                    espaldaShiny:data.sprites.back_shiny,
+                }
+                setPokemon(nuevo);
+            setIsSearch(true);
+        }
+    }
     return (
         
         <>
@@ -70,8 +117,8 @@ export const GifGridItem = ({pokemon,isSearch}) => {
                     
                 </div> */
             :
-            <div className='pokemon-block'>
-                <p className='name'>{pokemon.nombre}</p>
+            <div className='pokemon-block' onClick={obtieneNombre}>
+                <p className='name' id={pokemon.nombre}>{pokemon.nombre}</p>
                 <p className='number'>{pokemon.id.toString().padStart(3,0)}</p>
                 <div className='sprite-container'>
                     <img className='sprite' src={pokemon.imagenSrc} alt={pokemon.nombre}></img>
